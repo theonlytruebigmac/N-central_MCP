@@ -1,12 +1,12 @@
 {
-  "name": "nc-mcp-server",
+  "name": "n-central-rest-api-mcp",
   "version": "2.1.0",
-  "description": "MCP Server for N-central REST API — exposes all GET endpoints as MCP tools with org hierarchy resources and workflow prompts.",
+  "description": "Unofficial MCP server for the N-central REST API — exposes endpoints as MCP tools with org hierarchy resources and workflow prompts.",
   "type": "module",
   "private": true,
   "main": "index.js",
   "bin": {
-    "nc-mcp-server": "./index.js"
+    "n-central-rest-api-mcp": "./index.js"
   },
   "scripts": {
     "start": "node --env-file-if-exists=.env index.js",

@@ -1,6 +1,6 @@
-# N-central MCP Server — Setup & Client Guide
+# N-central REST API MCP Server — Setup & Client Guide
 
-How to connect the N-central MCP server to common MCP clients — **Claude Code**, **VS Code**,
+How to connect the N-central REST API MCP server to common MCP clients — **Claude Code**, **VS Code**,
 **Claude Desktop**, **Cursor**, and anything else that speaks MCP — in both deployment modes.
 
 For installing/running the server itself and the full tool list, see the [README](../README.md).
@@ -74,7 +74,7 @@ claude mcp add --transport stdio \
   --env NC_SERVER_URL=https://ncentral.example.com \
   --env NC_JWT_TOKEN=<jwt> \
   --env NC_WRITE_MODE=read-only \
-  ncentral -- node /abs/path/to/n-central-mcp/index.js
+  ncentral -- node /abs/path/to/n-central-rest-api-mcp/index.js
 ```
 or `.mcp.json`:
 ```json
@@ -83,7 +83,7 @@ or `.mcp.json`:
     "ncentral": {
       "type": "stdio",
       "command": "node",
-      "args": ["/abs/path/to/n-central-mcp/index.js"],
+      "args": ["/abs/path/to/n-central-rest-api-mcp/index.js"],
       "env": {
         "NC_SERVER_URL": "https://ncentral.example.com",
         "NC_JWT_TOKEN": "<jwt>",
@@ -207,7 +207,7 @@ Windows: `%APPDATA%\Claude\`), key **`mcpServers`**. Fully quit and reopen Claud
   "mcpServers": {
     "ncentral": {
       "command": "node",
-      "args": ["--env-file-if-exists=/abs/path/n-central-mcp/.env", "/abs/path/n-central-mcp/index.js"],
+      "args": ["--env-file-if-exists=/abs/path/n-central-rest-api-mcp/.env", "/abs/path/n-central-rest-api-mcp/index.js"],
       "env": { "NC_WRITE_MODE": "read-only" }
     }
   }

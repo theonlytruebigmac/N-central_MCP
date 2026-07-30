@@ -1,6 +1,8 @@
-# N-central MCP Server
+# N-central REST API MCP Server
 
 > A [Model Context Protocol](https://modelcontextprotocol.io/) server for **N-able N-central** — exposing the N-central REST API as MCP tools, resources, and prompts for use with any MCP-compatible client.
+
+> **Disclaimer:** This is an unofficial, community-maintained MCP server. It is **not** an official N-able MCP server, and it is focused specifically on the N-central **REST API** surface.
 
 ---
 
@@ -90,7 +92,7 @@ Or wire it into Claude Desktop directly. Add to `claude_desktop_config.json`:
   "mcpServers": {
     "ncentral": {
       "command": "node",
-      "args": ["--env-file-if-exists=/absolute/path/to/n-central-mcp/.env", "/absolute/path/to/n-central-mcp/index.js"],
+      "args": ["--env-file-if-exists=/absolute/path/to/n-central-rest-api-mcp/.env", "/absolute/path/to/n-central-rest-api-mcp/index.js"],
       "env": {
         "NC_WRITE_MODE": "read-only"
       }

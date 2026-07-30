@@ -280,7 +280,7 @@ describe('boot matrix', () => {
     const port = await freePort();
     const { exitCode, stderr } = await runBoot(
       { NC_MULTI_TENANT: '1', MCP_PORT: String(port), MCP_API_KEY: 'test-key' },
-      { readyRe: /Multi-tenant mode|MCP Server on http/ },
+      { readyRe: /Multi-tenant mode|REST API MCP Server on http/ },
     );
     assert.equal(exitCode, null, `expected the server to keep running, exited with ${exitCode}\n${stderr}`);
     assert.match(stderr, /Multi-tenant mode/);

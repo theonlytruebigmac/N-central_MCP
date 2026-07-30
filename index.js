@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-/** N-central MCP server entry point. See README.md and .env.example for configuration. */
+/** N-central REST API MCP server entry point. See README.md and .env.example for configuration. */
 
 import { randomUUID } from 'node:crypto';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
@@ -185,7 +185,7 @@ function createServer() {
   const srv = new McpServer({
     name: 'ncentral-api',
     version: '2.1.0',
-    description: 'N-central REST API MCP Server',
+    description: 'N-central REST API MCP Server (Unofficial)',
   });
 
   for (const tool of allTools) {
@@ -538,7 +538,7 @@ async function main() {
       });
 
       httpServer.listen(Number(MCP_PORT), MCP_BIND_ADDRESS, () => {
-        console.error(`N-central MCP Server on http://${MCP_BIND_ADDRESS}:${MCP_PORT}/mcp`);
+        console.error(`N-central REST API MCP Server on http://${MCP_BIND_ADDRESS}:${MCP_PORT}/mcp`);
         if (MCP_API_KEY) console.error('  Auth: Bearer token required');
       });
 
@@ -575,7 +575,7 @@ async function main() {
       const server = createServer();
       const transport = new StdioServerTransport();
       await server.connect(transport);
-      console.error('N-central MCP Server running on stdio');
+      console.error('N-central REST API MCP Server running on stdio');
     }
 
     auditLog('server_start', { mode: MCP_PORT ? 'http' : 'stdio', toolCount: allTools.length });

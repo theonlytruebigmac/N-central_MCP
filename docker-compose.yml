@@ -1,7 +1,7 @@
 services:
-  ncentral-mcp:
+  ncentral-rest-api-mcp:
     build: .
-    container_name: nc-mcp-server
+    container_name: n-central-rest-api-mcp
     # Loads all env vars from .env. NC_SERVER_URL / NC_JWT_TOKEN / MCP_API_KEY are required.
     env_file:
       - .env
